@@ -1,6 +1,8 @@
 import { Brain, Shield, Zap, Globe } from 'lucide-react';
+import { useTheme } from '../ThemeContext';
 
 function FeaturesSection() {
+  const { isDark } = useTheme();
   const features = [
     {
       icon: Brain,
@@ -25,9 +27,9 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-20 px-6 bg-black/20">
+    <section id="features" className={`py-20 px-6 transition-colors duration-300 ${isDark ? 'bg-black/20' : 'bg-gray-100'}`}>
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-['Cairo'] font-black text-white text-center mb-4">
+        <h2 className={`text-4xl font-['Cairo'] font-black text-center mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
           لماذا يثق كبار المستثمرين في Deep Break؟
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mx-auto mb-16"></div>
@@ -38,17 +40,17 @@ function FeaturesSection() {
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-[#0a0a0a] to-[#050505] border border-[#C5A059]/20 rounded-xl p-8 hover:border-[#C5A059]/50 transition-all duration-300"
+                className={`group relative border rounded-xl p-8 transition-all duration-300 ${isDark ? 'bg-gradient-to-br from-[#0a0a0a] to-[#050505] border-[#C5A059]/20 hover:border-[#C5A059]/50' : 'bg-white border-gray-200 hover:border-[#C5A059]/50'}`}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-[#C5A059]/10 rounded-lg group-hover:bg-[#C5A059]/20 transition-colors flex-shrink-0">
+                  <div className={`p-3 rounded-lg group-hover:bg-[#C5A059]/20 transition-colors flex-shrink-0 ${isDark ? 'bg-[#C5A059]/10' : 'bg-[#C5A059]/5'}`}>
                     <Icon className="w-6 h-6 text-[#C5A059]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-['Cairo'] font-bold text-white mb-2">
+                    <h3 className={`text-xl font-['Cairo'] font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 font-['IBM_Plex_Sans_Arabic'] text-sm leading-relaxed font-medium">
+                    <p className={`font-['IBM_Plex_Sans_Arabic'] text-sm leading-relaxed font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                       {feature.description}
                     </p>
                   </div>

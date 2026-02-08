@@ -1,3 +1,4 @@
+import { useTheme } from './ThemeContext';
 import Header from './components/Header';
 import MarketTicker from './components/MarketTicker';
 import ServiceCard from './components/ServiceCard';
@@ -6,6 +7,7 @@ import FeaturesSection from './components/FeaturesSection';
 import Footer from './components/Footer';
 
 function App() {
+  const { isDark } = useTheme();
   const services = [
     {
       title: 'الذهب والسيولة النقدية',
@@ -42,19 +44,19 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050505]">
+    <div className={isDark ? 'min-h-screen bg-[#050505]' : 'min-h-screen bg-white'}>
       <Header />
       <MarketTicker />
 
       <main>
-        <section className="py-20 px-6">
+        <section className={`py-20 px-6 ${isDark ? '' : 'bg-gray-50'}`}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h1 className="text-5xl md:text-6xl font-['Cairo'] font-black text-white mb-6 leading-tight tracking-tight">
+              <h1 className={`text-5xl md:text-6xl font-['Cairo'] font-black mb-6 leading-tight tracking-tight ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 الاستشارات السيادية<br />
                 <span className="text-[#C5A059]">لصناع القرار</span>
               </h1>
-              <p className="text-gray-400 font-['IBM_Plex_Sans_Arabic'] text-lg max-w-2xl mx-auto font-medium">
+              <p className={`font-['IBM_Plex_Sans_Arabic'] text-lg max-w-2xl mx-auto font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                 منصة استشارية متقدمة تجمع بين الذكاء الاصطناعي والخبرة البشرية لخدمة رجال الأعمال والمستثمرين المصريين
               </p>
             </div>

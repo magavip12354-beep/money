@@ -1,4 +1,7 @@
+import { useTheme } from '../ThemeContext';
+
 function MarketTicker() {
+  const { isDark } = useTheme();
   const marketData = [
     { label: 'عيار 24', value: '7,615 ج.م', change: '+0.8%' },
     { label: 'عيار 21', value: '6,666 ج.م', change: '+0.8%' },
@@ -16,7 +19,7 @@ function MarketTicker() {
   ];
 
   return (
-    <div className="bg-black/40 border-y border-[#C5A059]/10 overflow-hidden">
+    <div className={`border-y transition-colors duration-300 ${isDark ? 'bg-black/40 border-[#C5A059]/10' : 'bg-gray-100 border-gray-200'} overflow-hidden`}>
       <style>{`
         @keyframes tickerScroll {
           0% {
@@ -36,7 +39,7 @@ function MarketTicker() {
             <span className="text-[#C5A059] font-['Roboto_Mono'] text-sm font-bold tracking-wide">
               {item.label}:
             </span>
-            <span className="text-white font-['Roboto_Mono'] text-sm font-medium">
+            <span className={`font-['Roboto_Mono'] text-sm font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {item.value}
             </span>
             <span className={`text-xs font-['Roboto_Mono'] font-semibold ${item.change.startsWith('+') ? 'text-green-400' : 'text-red-400'}`}>
