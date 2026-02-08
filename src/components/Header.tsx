@@ -7,7 +7,7 @@ function Header() {
           <img
             src="/photo_2025-10-08_09-35-19-removebg-preview.png"
             alt="Deep Break Logo"
-            className="h-16 relative z-10"
+            className="h-24 relative z-10"
           />
         </div>
 

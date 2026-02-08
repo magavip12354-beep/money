@@ -2,9 +2,17 @@ function MarketTicker() {
   const marketData = [
     { label: 'عيار 24', value: '7,615 ج.م', change: '+0.8%' },
     { label: 'عيار 21', value: '6,666 ج.م', change: '+0.8%' },
+    { label: 'جنيه ذهب', value: '53,880 ج.م', change: '+1.1%' },
+    { label: 'فضة 999', value: '5,810 ج.م', change: '+0.5%' },
+    { label: 'فضة 925', value: '146.5 ج.م', change: '+0.4%' },
     { label: 'دولار/جنيه', value: '48.20', change: '+0.2%' },
+    { label: 'فائدة CBE', value: '20.00%', change: '0.0%' },
     { label: 'مؤشر EGX30', value: '28,450 نقطة', change: '+1.2%' },
     { label: 'سهم CIB', value: '195.00 ج.م', change: '+2.1%' },
+    { label: 'التضخم العام', value: '12.3%', change: '-2.1%' },
+    { label: 'التضخم الحضري', value: '26.4%', change: '+0.8%' },
+    { label: 'توقعات يناير 26', value: '11.7%', change: '-0.6%' },
+    { label: 'التضخم الأساسي', value: '11.5%', change: '-0.8%' },
   ];
 
   return (
